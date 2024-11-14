@@ -1,0 +1,44 @@
+<html>
+<head>
+    <title>Canvas</title>
+</head>
+<body>
+    <canvas
+    style="height: 400px; width: 100%; background-color: yellow;"
+    id="myCanvas">
+    </canvas>
+    <center>
+        <input type="button" value="Draw" onclick="Draw()" />
+    </center>
+    <script>
+        var x1 = 0;
+        var x2 = 0;
+        var y1 = 0;
+        var y2 = 0;
+
+        function Draw(){
+            setInterval(KeepDrawing, 100);
+        }
+        function KeepDrawing(){
+            var refToMyCanvas = document.getElementById("myCanvas"); 
+
+            if (refToMyCanvas.getContext) { 
+                var context = refToMyCanvas.getContext("2d");
+                context.lineWidth = 1;
+                context.lineCap = "round"; 
+                x2 = x1 + 3;
+                y2 = Math.floor(Math.random() * 100);
+                context.moveTo(x1, y1);
+                context.lineTo(x2, y2);
+                context.stroke();
+                console.log(" X " + x1);
+                console.log(" Y " + y1);
+            } else {
+                console.log("Canvas is not supported.");
+            }
+             x1 = x2;
+             y1 = y2;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <title>
+            Document
+        </title>
+    </head>
+
+    <body>
+        
+        <br /><br /><br />
+        <table>
+            <tr>
+                <tb>Name</tb>
+                <tb>
+                    <input type="text" id="txtName" />
+                </tb>
+                <tb style="width: 100%">
+                    <div id="divForErrorsRelatedToName" style="color: red;"> </div>
+                </tb>
+            </tr>
+            <tr>
+                <td>Surname</td>
+                <td>
+                    <input type="text" id="Surname" />
+                </td>
+                <tb style="width: 100%">
+                    <div id="divForErrorsRelatedToSurname" style="color: red;"> </div>
+                </tb>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <input type="button" value="Click Me" onclick="Register()">
+                </td>
+            </tr>
+        </table>
+        
+               
+
+        <script>
+            function Register() {
+                var refName = document.getElementById("txtName");
+                var refErrorMsg = document.getElementById("divForErrorsRelatedToName");
+                var errorMsg = "Name is required.";
+                
+                
+                if(refName.value == ""){
+                    refErrorMsg.innerText = errorMsg;
+                }else{
+                    refErrorMsg.innerText = "";
+                }
+
+                
+                var refSurname = document.getElementById("Surname");
+                
+                var refErrorMsg2 = document.getElementById("divForErrorsRelatedToSurname");
+
+                var errorMsg2 = "SurName is required.";
+             
+                if(refSurname.value == ""){
+                    refErrorMsg2.innerText = errorMsg2;
+                }
+                else{
+                    console.log("Hi " + refName.value + refSurname.value);
+                    refErrorMsg2.innerText = "";
+                }
+            }
+        </script>
+    </body>
+</html>

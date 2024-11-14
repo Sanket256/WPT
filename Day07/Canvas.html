@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title>Canvas</title>
+</head>
+<body>
+    <canvas
+    style="height: 400px; width: 100%; background-color: yellow;"
+    id="myCanvas">
+    </canvas>
+    <center>
+        <input type="button" value="Draw" onclick="Draw()" />
+    </center>
+    <script>
+        function Draw(){
+            var refToMyCanvas = document.getElementById("myCanvas"); 
+
+            if (refToMyCanvas.getContext) { 
+                var context = refToMyCanvas.getContext("2d");
+                context.lineWidth = 5;
+                context.lineCap = "round"; 
+                context.moveTo(10, 10);
+                context.lineTo(20, 20);
+                context.stroke();
+            } else {
+                console.log("Canvas is not supported.");
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <h1>PAGE 3</h1>
+    <hr>
+    Name: <input type="text" id="txtName" name="MyName"> 
+    <br>
+    City: <input type="text" id="txtCity" name="MyCity">
+    <br>
+    <button onclick="SavNavigate()">Click Me</button>
+    <script>
+        function SavNavigate(){
+        var refToTxtNmae = document.getElementById("txtName");
+        var refToTxtCity = document.getElementById("txtCity");
+        window.sessionStorage.setItem("MyName", refToTxtNmae.value);
+        window.sessionStorage.setItem("MyCity", refToTxtCity.value);
+        window.location.href = "Page2.html";
+        }
+    </script>
+</body>
+</html>

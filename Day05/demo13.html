@@ -1,0 +1,44 @@
+<head>
+    <title>DOM</title>
+  </head>
+  <body>
+    <img
+      src="car.png"
+      style="height: 100px; width: 100px; position: absolute"
+      id="myCar"
+    />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <hr />
+    <center>
+        <input type="button" value="Start" onclick="Start()" />
+        <input type="button" value="Stop" onclick="Stop()" />
+
+    </center>
+
+    <script>
+        var counter = 0;
+
+        function keepCounting(){
+            counter = counter + 10;
+            var refTomyCar = document.getElementById("myCar");
+            refTomyCar.style.left = counter + "px";
+        }
+
+        var no; 
+
+        function Start(){
+            no = window.setInterval(keepCounting, 1000);
+        }
+
+        function Stop(){
+            window.clearInterval(no);
+        }
+    </script>
+</body>
+</html>

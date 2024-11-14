@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>
+            Document
+        </title>
+    </head>
+
+    <body>
+        
+        <br /><br /><br />
+        <table>
+            <tr>
+                <tb>Name</tb>
+                <tb>
+                    <input type="text" id="txtName" />
+                </tb>
+                <tb>
+                    <div id="divForErrorsRelatedToName" style="color: red;"> </div>
+                </tb>
+            </tr>
+            <tr>
+                <tb colspan="3">
+                    <input type="button" value="Click Me" onclick="Register()">
+                </tb>
+            </tr>
+        </table>
+
+        <script>
+            function Register() {
+                var refName = document.getElementById("txtName");
+                var refErrorMsg = document.getElementById("divForErrorsRelatedToName");
+                var errorMsg = "Name is required.";
+                if(refName.value == ""){
+                    refErrorMsg.innerText = errorMsg;
+                }else{
+                    console.log("hi " + refName.value);
+                    refErrorMsg.innerText = "";
+                }
+            }
+        </script>
+    </body>
+</html>

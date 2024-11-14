@@ -1,0 +1,52 @@
+<html>
+<head>
+    <title>Demo 3</title>
+</head>
+<body>
+    
+    <script>
+        function getmeSomething(flag){
+
+            var fn = null;
+
+            if(flag){
+                return fn = function(){
+                    console.log("Hi");
+                };
+            }
+            else{
+                return fn = function(){
+                    console.log("Bye");
+                };
+            }
+            return fn;
+        }
+        var something = getmeSomething(true);
+        something();
+
+
+        // Literals syntax to create and Onject
+
+        var person = {
+            No: 1,
+            Name: "Sanket",
+            Address: "Pune",
+            Print: function(){
+                console.log(this.Name + " " + this.No + " " + this.Address);
+            }
+        }
+        person.Print();
+        var employee = {
+            Dept: "IT",
+            Print: function(){
+                console.log(this.Name + " " + this.Dept + " " );
+            }
+            
+        }
+        employee.__proto__ = person;
+        // we have assign person as parent to employee i.e. inheritnace
+        
+        employee.Print();
+    </script>
+</body>
+</html>

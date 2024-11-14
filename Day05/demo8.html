@@ -1,0 +1,46 @@
+<html lang="en">
+  <head>
+    <title id="myTitle">Document</title>
+  </head>
+  <body>
+    <br /><br /><br />
+    <center>
+
+        <div id="div1"
+        style="
+        height:100px;
+        width:100px;
+        background-color: skyblue;
+        ">
+
+        </div>
+        <br>
+        <div id="div2"
+        style="
+        height:100px;
+        width:100px;
+        background-color: yellow;
+        ">
+
+        </div>
+
+        <input type="button" value="Click - Me" onclick="ZhapukZhupuk()">
+    </center>
+             <script>
+                
+                function ZhapukZhupuk(){
+                    var ref1 = document.getElementById("div1");
+                    ref1.innerText = "Hello";
+
+                    var ref2 = document.getElementById("div2");
+
+                    ref2.innerHTML = `<br />
+        <img src="car.png" height="70px" width="70px" />`;
+
+
+
+                  var ref3 = document.getElementById("myTitle");
+                }
+             </script>
+    </body>
+</html>

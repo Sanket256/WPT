@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="DoSomething()">
+    <video 
+    height="50px"
+    width="50px"
+    src=""
+    id="myVideo"><iframe width="560" height="315" src="https://youtu.be/ituQkXDVs-4?si=CsuZbZPOuNguDUuq" 
+    title="YouTube video player" frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    allowfullscreen>
+</iframe></video>
+    </button>
+     <script>
+        function DoSomething(){
+            var refToMyVideo = document.getElementById("myVideo");
+            refToMyVideo.play();
+        }
+     </script>
+
+</body>
+</html>

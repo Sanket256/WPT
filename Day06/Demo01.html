@@ -1,0 +1,161 @@
+<html>
+<head>
+    <title>Registration Forms Validations</title>
+</head>
+<body>
+    
+    <center>
+        <table style="border: 2px solid black; border-collapse: collapse;">
+            <tr>
+               <td>name</td>  
+               <td>
+                <input type="text" id="Name">
+               </td>
+               <td>
+                <div style="color: red;" id="divName"></div>
+               </td> 
+            </tr>
+            <tr>
+                <td>Address</td>  
+                <td>
+                    <textarea id="Address"></textarea>
+                </td> 
+                <td>
+                    <div style="color: red;" id="divAddress"></div>
+                   </td> 
+            </tr>
+            <tr>
+                <td>Country</td>
+                <td>
+                    <select id="Country">
+                        <option value="91" name="Country">India</option>
+                        <option value="41" name="Country">USA</option>
+                        <option value="58" name="Country">UK</option>
+                        <option value="1" name="Country">Australia</option>
+                    </select>
+                </td>  
+                <td>
+                    <div style="color: red;" id="divCountry"></div>
+                   </td>  
+            </tr>
+            <tr>
+                <td>Age</td>  
+                <td>
+                    <input type="number" id="Age" min="18" max="60">
+                   </td>
+                   <td>
+                    <div style="color: red;" id="divAge"></div>
+                   </td>  
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>
+                    <input type="email" id="Email">
+                   </td>
+                   <td>
+                    <div style="color: red;" id="divEmail"></div>
+                   </td>   
+            </tr>
+            <tr>
+                <td>Gender</td> 
+                <td>
+                    <input type="radio" id="1" name="Gender">Male
+                    <input type="radio" id="2" name="Gender">Female
+                    <input type="radio" id="3" name="Gender">Others
+                </td>
+                <td>
+                    <div style="color: red;" id="divGender"></div>
+                   </td>   
+            </tr>
+            <tr>
+                <td>Hobbies</td> 
+                <td>
+                    <select multiple="multiple" id="Hobbies">
+                        <option value="1" name="Hobbies"> Reading </option>
+                        <option value="2" name="Hobbies"> Gaming </option>
+                        <option value="3" name="Hobbies"> Waching Movies </option>
+                        <option value="4" name="Hobbies"> Cycling </option>
+                    </select>
+                    <td>
+                        <div style="color: red;" id="divHobbies"></div>
+                       </td> 
+                </td>  
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" id="checkbox"> 
+                </td>
+                 
+                <td>
+                    I accepted all Terms & Coditions
+                </td>
+                <td>
+                    <div style="color: red;" id="divCheckbox"></div>
+                   </td> 
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" value="Register" onclick="Register()">
+                </td>  
+                <td>
+                    <div style="color: red;" id=" divRegister"></div>
+                   </td> 
+            </tr>
+        </table>
+        
+        <script>
+            function Register(){
+                validation(); 
+                var ref1 = document.getElementById("Name");
+                console.log("Name is: " + ref1.value);
+    
+                var ref2 = document.getElementById("Address");
+                console.log("Address is: " + ref2.value);
+    
+                var ref3 = document.getElementById("Country");
+                console.log("Country is: " + ref3.options[ref3.selectedIndex].text);
+    
+                var ref4 = document.getElementById("Age");
+                console.log("Age is: " + ref4.value);
+    
+                var ref5 = document.getElementById("Email");
+                console.log("Email is: " + ref5.value);
+    
+                var ref6 = document.getElementsByName("Gender");
+                for (var i = 0; i < ref6.length; i++) {
+                    if (ref6[i].checked) {
+                        console.log("Gender is: " + ref6[i].value);
+                    }
+                }
+            }
+            function validation(){
+                check("Name" ,"divName" ,"Name is required");
+    
+                check("Address" ,"divAddress" ,"Address is required");
+    
+                check("Country" ,"divCountry" ,"Country is required");
+    
+                check("Age" ,"divAge" ,"Age is required");
+    
+                check("Email" ,"divEmail" ,"Email is required");
+    
+                check("1" ,"divGender" ,"Gender is required");
+    
+                check("Hobbies" ,"divHobbies" ,"Hobbies is required");
+    
+                check("checkbox" ,"divcheckbox" ,"Please Select the checkbox");
+            }
+            function check(id, diveId, errorMsg){
+                var ref9 = document.getElementById(id);
+                var ref10 = document.getElementById(diveId);
+                if(ref9.value == "" ){
+                    ref10.innerText = errorMsg;
+                }else{
+                    console.log(ref9.value);
+                    // ref10.innerText = "";
+                }
+            }
+        </script>
+    </center>
+</body>
+</html>

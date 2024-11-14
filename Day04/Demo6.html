@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>Demo 6
+
+        </title>
+
+    </head>
+
+    <body>
+        <input type="text" id="txtName" value="" />
+        <input type="button" id="btn" value="click-me" onclick="doSomething()">
+        <Script>
+            function doSomething() {
+                var refToTxtName = document.getElementById("txtName");
+                console.log("hi " + refToTxtName.value); 
+            }
+        </Script>
+    </body>
+</html>

@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>
+            DOM-2
+        </title>
+    </head>
+
+    <body>
+        <div
+        style="
+        height: 200px;
+        width: 200px;
+        background-color: red;
+        position: absolute;
+        "
+
+        id="myDiv"
+        >
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <center>
+            <input type="button" value="click me" onclick="DoSomething()" />
+
+        </center>
+
+        <script>
+            var counter = 10;
+            function DoSomething(){
+                counter = counter + 10;
+
+                var rTomyDiv= document.getElementById("myDiv");
+                rTomyDiv.style.left = counter + "px";
+            }
+        </script>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,148 @@
+
+<html>
+<head>
+    
+    <title>Registration Form</title>
+</head>
+<body>
+    
+    <center>
+        <table  style="text-align: center;">
+            <tr>
+                <td>
+                    Name :
+                </td>
+                <td >
+                    <div id="divname" style="color: red;"></div>
+                    <input type="text" id="name">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Address :
+                </td>
+                <td>
+                    <div id="divaddress" style="color: red;">
+                    </div>
+                    <textarea name="" id="address"></textarea>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Country : 
+                </td>
+                <td>
+                    <div id="divcountry" style="color: red;">
+                        
+                    </div>
+                    <select id="country">
+                        <option value="0">Please Select Country</option>
+                        <option value="91">India</option>
+                        <option value="44">USA</option>
+                        <option value="1">UK</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>  Age :</td>
+                <td>
+                    <div id="divAge" style="color: red;">
+                    </div>
+                    <input type="number" id="age" min="18" max="60">
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Email : 
+                </td>
+                <td>
+                    <div id="divEmail" style="color: red;">
+                       
+                    </div>
+                    <input type="email" id="email">
+                </td>
+            </tr>
+            <tr>
+                <TD>
+                    Gender :
+                </TD>
+                <td>
+                    <div id="divGender" style="color: red;">
+                       
+                    </div>
+                      
+                    Male<input type="radio" id="1" name="gender">
+                    Female<input type="radio" id="2" name="gender">
+                    Others<input type="radio" id="3" name="gender">
+
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Hobbies :
+                </td>
+                <td>
+                    <div id="divHobbies" style="color: red;">
+                         
+                    </div>
+                    <select multiple="multiple" id="hobby">
+                        <option value="">Trekking</option>
+                        <option value="">Reading</option>
+                        <option value="">Gaming</option>
+                     </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div id="divCheckbox" style="color: red;">
+                        
+                    </div>
+                    <input type="checkbox" id="checkbox">
+                </td>
+                <td>
+                    <span>I Accept Term & Conditions</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div id="divRegister" style="color: red;">
+                         
+                    </div>
+                    <input type="button" id="btn" value="Register" onclick="Validation()">
+                </td>
+            </tr>
+        </table>
+        <script>
+
+            function Validation(){
+                checkEmpty("name", "divname","Name is required!");
+                checkEmpty("address","divaddress" ,"Address is required!");
+                checkEmpty("country","divcountry" ,"Country is required!");
+                checkEmpty("age","divAge" ,"Age is required!");
+                checkEmpty("email","divEmail" ,"Email is required!");
+                checkEmpty("1","divGender" ,"Gender is required!"); 
+                checkEmpty("checkbox", "divCheckbox" ,"Please Click The Checkbox!");
+                
+            }
+
+            function checkEmpty(id ,divid, errorMsg){
+                var ref = document.getElementById(id);
+                var ref2 = document.getElementById(divid);
+                console.log(ref.value);
+                if(ref.value=""){
+                    ref2.innerText = errorMsg;
+                }
+                else{
+                    console.log(ref.value);
+                   
+                }
+            }
+        </script>
+    </center>
+</body>
+</html>

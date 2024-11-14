@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div style="text-align: center;">
+        <input type="text" id="name" value=""/>
+    <br>
+    <input type="text" id="surname" value=""/>
+    <br>
+   
+    <input type="text" id="result" value =""/>
+    <br>
+    <button type="button" onclick="fullName()">Save</button>
+    
+    
+    <br>
+    <script>
+        var res = document.getElementById("name");
+        var res2 = document.getElementById("surname");
+        var res3 = document.getElementById("result");
+        function fullName(){
+            return res3.value = res.value+" "+res2.value; 
+        }
+        
+    </script>
+    </div>
+
+</body>
+</html>

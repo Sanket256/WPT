@@ -1,0 +1,103 @@
+<html>
+    <head>
+        <body>
+            Functional Programming 
+        </body>
+    </head>
+
+    <body>
+    
+        <script>
+
+
+            //Normal function
+            function sayHi(name){
+                console.log("Hi " + name);
+            }
+
+            sayHi("Sanket");
+
+            //Here function is keep in the vaariable.
+            var varInfunc = function(name){
+                console.log("Hi " + name)
+            }
+
+            varInfunc("sanket");
+
+            // Hoisting
+
+            console.log(x);
+            x = 10;
+            console.log(x);
+            var x = 20;
+            console.log(x);
+
+            // With Referemce to above functions
+            var x = undefined;
+            console.log(x);
+            x = 10;
+            console.log(x);
+            x = 20; 
+            console.log(x);
+
+
+            // for function
+            sayHi();
+
+            function sayHi(){
+                console.log("hi");
+            }
+
+            //Function can be passed as parameter
+            //f1 & f2 are passed as function
+            function check(f1, f2){
+                if(10 > 4){
+                    f1();
+                }else{
+                    f2();
+                }
+            }
+            //this is first function
+            function f1(){
+                console.log("Wow!");
+            }
+            //this one is second function
+            function f2(){
+                console.log("Miracle!");
+            }
+            //function call;
+            check(f1, f2);
+
+
+            // function check(onsuccess, onfailure){
+            //     if(10 < 4){
+            //         f1();
+            //     }else{
+            //         f2();
+            //     }
+            // }
+            // var F1 = function(){
+            //     console.log("Wow!");
+            // }
+            // var F2 = function(){
+            //     console.log("Miracle!");
+            // }
+
+            // check(F1, F2);
+
+
+            // by passing this x and y it will print the whole body of function defined
+            function X(){
+                console.log("Great!!");
+
+            }
+
+            function Y(){
+                console.log("Not so Greate.");
+            }
+
+            check(X,Y);
+        </script>
+
+    </body>
+</html>

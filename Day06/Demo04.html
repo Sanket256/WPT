@@ -1,0 +1,54 @@
+<html>
+<head>
+    <title>
+        Demo 04 
+    </title>
+</head>
+
+<body>
+    <script>
+        var person = function(no, name, address){
+            this.No= no,
+            this.Name= name,
+            this.Address= address,
+            this.print= function(){
+                console.log(this.No + " " +this.Name  + " " + this.Address);
+            }
+        }
+        var p1 = new person(1, "Sanket", "Pune");
+        p1.print();
+
+
+        class Person{
+            constructor(name, address,no){
+                this.No = no;
+                this.Name = name;
+                this.Address = address;
+            }
+
+            print(){
+                console.log(this.No + " " +this.Name + " " +this.Address);
+            }
+        }
+
+
+        var v1 = new Person(1, "Rushikesh", "Pune");
+        v1.print();
+
+
+        class Employee extends Person{
+            constructor(name, address,no, deptNo){
+                super(name, address, no);
+                this.DeptNo = deptNo;
+            }
+            print(){
+            console.log(this.No + " " +this.Name + " " +this.Address+" "+this.DeptNo);
+        }
+        }
+
+        
+        var e1 = new Employee("Nilesh", "pune", 2, "It");
+        e1.print();
+    </script>
+</body>
+</html>

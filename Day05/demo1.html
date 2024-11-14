@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>
+            Demo 01
+        </title>
+    </head>
+    <body>
+        X: <input type="number" id="totNoX" />
+        <br>
+        Y: <input type="number" id="totNoY" />
+        <br>
+        Result: <input type="text" id="result" />
+        <br>
+        <input type="button" onclick="Add()" value="Click Me" />
+        <br>
+
+
+        <script>
+            function Add() {
+                debugger;
+
+                var rX = document.getElementById("totNoX");
+                var rY = document.getElementById("totNoY");
+                var rRes = document.getElementById("result");
+
+                var xVal=rX.value;
+                var yVal=rY.value;
+                var x = window.parseInt(xVal);
+                var y = window.parseInt(yVal);
+
+                var result = x + y;
+                rRes.value = result;
+            }
+        </script>
+    </body>
+</html>

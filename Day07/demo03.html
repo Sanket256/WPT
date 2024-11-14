@@ -1,0 +1,40 @@
+<html>
+<head>
+    <title>Video Tag</title>
+</head>
+<body>
+    
+    <center>
+        <input type="button" value="click me" onclick="Play()" />
+        <input type="button" value="Pause-Me" onclick="Stop()" />
+        <input type="button" value="Reload" onclick="Load()" />
+        <input type="button" value="FastSeek" onclick="FastSeek()" />
+    <br>
+    <video src="https://www.w3schools.com/html/mov_bbb.mp4"
+    style="height: 400px; width: 400px;"
+    id="myvideo"
+    controls ></video>
+
+    <script>
+        function Play(){
+            var refToMyVideo = document.getElementById("myvideo");
+            refToMyVideo.play();
+        }
+
+        function Stop(){
+            var refToMyVideo = document.getElementById("myvideo");
+            refToMyVideo.pause();
+        }
+
+        function Load(){
+            var refToMyVideo = document.getElementById("myvideo");
+            refToMyVideo.load();
+        }
+        function FastSeek(){
+            var refToMyVideo = document.getElementById("myvideo");
+            refToMyVideo.fastSeek(2);
+        }
+    </script>
+    </center>
+</body>
+</html>

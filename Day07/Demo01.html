@@ -1,0 +1,68 @@
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <div
+    id="myDiv"
+    style="
+    height: px;
+    border-bottom: 2px solid black;
+    position: absolute;
+    left: 0px;
+    ">
+    <img src="images.png" style="height: 50px; width: 50px;">
+    </div>
+ <br>
+ <br>
+    <hr>
+    <input type="button" value="Move" onclick="Move()" style="top: 800px;">
+    <input type="button" value="Slowdown" onclick="slowDown()">
+    <input type="button" value="Stop" onclick="Stop()">
+    <!-- <input type="button" value="Reverse" onclick="Reverse()"> -->
+    <script>
+        var counter = 0;
+        var arr = new Array();
+
+        function Move(){
+            var queno = setInterval(KeepMoving, 100);
+            arr.push(queno);
+            console.log(arr + " "); 
+        }
+
+        function KeepMoving(){
+            counter = counter + 1;
+            var refToMyDiv = document.getElementById("myDiv");
+            refToMyDiv.style.left = counter + "px";
+        }
+
+        function slowDown(){
+           while(arr.length > 0){
+            var no = arr.pop();
+            console.log(no +  " removed ");
+            clearInterval(no);
+            break;
+           }
+        }
+        function Stop(){
+           while(arr.length > 0){
+            var no = arr.pop();
+            console.log(no +  " removed ");
+            clearInterval(no);
+           }
+        }
+        // function KeepGoingBack(){
+        //     counter = counter - 1;
+        //     var refToMyDiv = document.getElementById("myDiv");
+        //     refToMyDiv.style.left = counter - "px";
+        // }
+        // function Reverse(){
+        //     var queno = setInterval(KeepGoingBack, 100);
+        //     arr.pop();
+        //     console.log(arr + " "); 
+        // }
+        console.log("Hi");
+
+    </script>
+</body>
+</html>

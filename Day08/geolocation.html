@@ -1,0 +1,41 @@
+
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        Latitude: <input type="text" id="txtLat"> 
+        <br>
+        Longitude: <input type="text" id="txtLan">
+        <br>
+
+        <button onclick="Cordinats()">Cordinats</button>
+        <br>
+        <button onclick="SeeMap()" >See Map</button>
+    </center>
+
+    <script>
+        function Cordinats(){
+            navigator.geolocation.getCurrentPosition(OnSuccess, OnError);
+        }
+        var refTolat = document.getElementById("txtLat");
+        var refTolan = document.getElementById("txtLan");
+
+        function OnSuccess(result){
+            refTolat.value = result.coords.latitude;
+            refTolan.value = result.coords.longitude;
+        }
+        function OnError(error){
+            alert("SomeTHing wend wrong");
+        }
+        function SeeMap() {
+        window.location.href =
+          "https://www.latlong.net/c/?lat=" +
+          refToTxtLat.value +
+          "&long=" +
+          refTotxtLong.value;
+      }
+    </script>
+</body>
+</html>
