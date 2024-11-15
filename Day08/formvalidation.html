@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body style="background-color: #dc143c;">
+    <center>
+        <div id="divId" style="height: 200px; width: 100%; border: 1px solid black; border-radius: 5px; text-align: center;background-color: rgb(197, 158, 100);top: 120px; position:absolute;">
+        <br>
+        Email: 
+        <input type="email" id="txtEmail">
+        <br>
+        <br>
+        Password: <input type="password" id="txtPassword">
+        <br>
+        <br>
+        <button onclick="submitDetails()">Submit</button>
+        </div>
+    </center>
+
+    <script>
+        function submitDetails(){
+            var refEmail = document.getElementById("txtEmail");
+            var refPassword = document.getElementById("txtPassword");        
+
+            if(refEmail.value == "devraysanket@gmail.com" && refPassword.value == "Sanket123"){
+                alert("Welcome");
+            }else{
+                alert("Please Enter valid Email or Password")
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <table border="1" style="height: 100px; width: 100%; border: 1; border-collapse: collapse;">
+            <tr>
+                <td>1</td>
+                <td>Sanket</td>
+                <td>Pune</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Sanket</td>
+                <td>Pune</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Sanket</td>
+                <td>Pune</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Sanket</td>
+                <td>Pune</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Sanket</td>
+                <td>Pune</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Sanket</td>
+                <td>Pune</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Sanket</td>
+                <td>Pune</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Sanket</td>
+                <td>Pune</td>
+            </tr>
+        </table>
+    </center>
+
+    <script src="jquery-3.7.1.min.js"></script>
+    <script>
+        $("tr").mouseover(function () {
+            $(this).css("background-color", "red");
+        });
+
+        $("tr").mouseout(function () {
+            $(this).css("background-color", "white");
+        });
+        $("tr").click(function () {
+            $(this).css("background-color", "blue");
+        });
+        $("tr").mousemove(function () {
+            $(this).css("background-color", "green");
+        });
+    </script>
+</body>
+</html>

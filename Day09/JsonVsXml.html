@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <?xml?>
+     <employee>
+        <No>1</No>
+        <Name>Sanket</Name>
+        <Adress>Pune</Adress>
+    </employee> -->
+
+    <!-- Retriving data from this xml file is very much complex as compared to string access -->
+
+   <center>
+    <button onclick="getData()">GetData</button>
+    <hr>
+    <table border="1" id="myTable" style="width:600px; height: 50px; text-align: center;">
+        <tr>
+            <td>
+                Name
+            </td>
+            <td>
+                DeptName 
+            </td>
+            <td>
+                Hobbies
+            </td>
+            
+        </tr>
+       
+    </table>
+
+    <script>
+        
+        var refToTable = document.getElementById("myTable");
+        function getData(){
+            var emp = null;
+
+            var helper = new XMLHttpRequest();
+            helper.
+            helper.onreadystatechange = function (){
+                if(helper.readyState == 4 && helper.status == 200){
+                    var dataFromServerInString = helper.responseText;
+                    emp = JSON.parse(dataFromServerInString);
+
+                    var refToMyTable = document.getElementById("myTable");
+                    refToMyTable.innerHTML = refToMyTable.innerHTML + ` <tr>
+                                                                        <td>${emp.Name}</td>
+                                                                        <td>${emp.Dept.DeptName}</td>
+                                                                        <td>${emp.Hobbies[0]},${emp.Hobbies[1]},${emp.Hobbies[2]}</td>
+                                                                    </tr>`;
+                }
+            };
+            helper.open("GET", "http://127.0.0.1:5500/data.json");
+
+            helper.send();
+        }
+    </script>
+   </center>
+</body>
+</html>

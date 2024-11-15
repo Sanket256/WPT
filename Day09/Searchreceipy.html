@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: rgb(0, 162, 255);">
+    
+   
+    <center>
+        <input type="text" id="searchedValue" >
+        <br>
+        <br>
+        <button onclick="getData()" style="background-color: black; color: white;">Search Receipy</button>
+        <hr>
+        <table border="1" id="myTable" style="height: 50px; width: 100%; border-collapse: collapse; text-align: center ; background-color: aqua;">
+            <tr>
+                <td>Id</td>
+                <td>Meal</td>
+                <td>Category</td>
+                <td>Instruction</td>
+                <td >Img</td>
+            </tr>
+           
+        </table>
+    </center>
+    <script>
+        function getData(){
+
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function(){
+                // debugger;/
+                if(xhr.readyState == 4 && xhr.status == 200){
+                        var data = JSON.parse(xhr.responseText);
+                        var user = data.meals;
+                        var refToTable = document.getElementById("myTable");
+                        user.map((arr) => {
+                            var row = `<tr>
+                            <td>${arr.idMeal}</td>
+                            <td>${arr.strMeal}</td>
+                            <td>${arr.strArea}</td>
+                            <td>${arr.strInstructions}</td>
+                            <td>
+                                <img src="${arr.strMealThumb}" style="height: 100px; width: 100px;">
+                            </td>
+                            </tr>`;
+                            refToTable.innerHTML = refToTable.innerHTML + row;
+                        });
+                        
+                   
+                    }
+                    // else{
+                    // alert("No Recipy Found please chcek the Key Word");
+                    // }
+                }
+                
+            var refToInput = document.getElementById("searchedValue");
+            xhr.open("GET",`https://www.themealdb.com/api/json/v1/1/search.php?s=${refToInput.value}`);
+            xhr.send();
+        }
+    </script>
+</body>
+</html>

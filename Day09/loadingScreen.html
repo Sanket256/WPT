@@ -1,0 +1,27 @@
+
+<html>
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <div>
+            <img src="progress.gif" alt="">
+            <button onclick="getData()">Click Me</button>
+        </div>
+    </body>
+    <script>
+        function getData(){
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState == 4){
+                    if(xhr.status == 200){
+                        
+                    }
+                }
+            }
+            xhr.open("GET", "https://reqres.in/api/users");
+            xhr.send();
+        }
+    </script>
+    </center>
+</html>

@@ -1,0 +1,72 @@
+<!-- https://reqres.in/api/users -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <center>
+        <button onclick="getData()">GetData</button>
+        <hr>
+        <table border="1" id="myTable" style="width:600px; height: 50px; text-align: center;">
+            <tr>
+                <td>
+                    Id
+                </td>
+                <td>
+                    Name
+                </td>
+                <td>
+                    Profile
+                    <img src="" id="profile">
+                </td>
+
+
+
+            </tr>
+
+
+
+        </table>
+
+        <script>
+
+            var refToTable = document.getElementById("myTable");
+            function getData() {
+                var user = null;
+                var helper = new XMLHttpRequest();
+                var reftoPro = document.getElementById("profile");
+                helper.onreadystatechange = function () {
+                    if (helper.readyState == 4) {
+                        if (helper.status == 200) {
+                            var result = JSON.parse(helper.responseText);
+                            console.log(result);
+                            user = result.data;
+                            user.map((one) => {
+                                var row = `<tr>
+                                    <td>${one.id}</td>
+                                    <td>${one.first_name} ${one.last_name}</td>
+                                    <td>
+                                    <img src="${one.avatar}" style="height: 200px; width: 200px;">
+                                        </td>
+                               </tr>`
+                                refToTable.innerHTML = refToTable.innerHTML + row;
+                            });
+                        }
+                    }
+                };
+                helper.open("GET", "https://reqres.in/api/users");
+
+                helper.send();
+            }
+        </script>
+    </center>
+</body>
+
+</html>

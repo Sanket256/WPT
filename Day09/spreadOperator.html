@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var person = {No: 1, Name: "Sanket", Email:"devraysanket@gmail.com"};
+        var p2 = person;
+
+        p2 = {...person};
+        p2.Name = "Nikhil";
+        console.log(person.Name);
+        console.log(p2.Name);
+       // console.log(p2.Email);
+    </script>
+</body>
+</html>

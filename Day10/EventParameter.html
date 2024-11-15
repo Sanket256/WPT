@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <input type="text" id="txtBox" onkeydown="HandleKeyPress(event)">
+        <br>
+        <hr>
+        <input type="button" value="1" onclick="F1(event)">
+        <input type="button" value="2" onclick="F1(event)">
+        <input type="button" value="3" onclick="F1(event)">
+        <br>
+        <input type="button" value="4" onclick="F1(event)">
+        <input type="button" value="5" onclick="F1(event)">
+        <input type="button" value="6" onclick="F1(event)">
+        <br>
+        <input type="button" value="7" onclick="F1(event)">
+        <input type="button" value="8" onclick="F1(event)">
+        <input type="button" value="9" onclick="F1(event)">
+
+            <div id="clickDiv" style="width: 100px; height: 100px; background-color: black;">
+                click me
+            </div>
+
+            <div id="mouseoverDiv" style="width: 100px; height: 100px; background-color: lightgreen;">Hover Over Me</div>
+            <script>
+                document.getElementById("mouseoverDiv").addEventListener("mouseover", function() {
+                    this.style.backgroundColor = "yellow";
+                });
+            </script>
+            <div id="mouseoverDiv" style="width: 100px; height: 100px; background-color: lightgreen;">Hover Over Me</div>
+            <script>
+                document.getElementById("mouseoverDiv").addEventListener("mouseover", function() {
+                    this.style.backgroundColor = "yellow";
+                });
+            </script>
+            
+            <div id="mouseoutDiv" style="width: 100px; height: 100px; background-color: lightpink;">Hover and Leave</div>
+            <script>
+                document.getElementById("mouseoutDiv").addEventListener("mouseover", function() {
+                    this.style.backgroundColor = "purple";
+                });
+                document.getElementById("mouseoutDiv").addEventListener("mouseout", function() {
+                    this.style.backgroundColor = "lightpink";
+                });
+            </script>
+
+            <div id="mousedownDiv" style="width: 100px; height: 100px; background-color: lightgray;">Press Mouse</div>
+            <script>
+            document.getElementById("mousedownDiv").addEventListener("mousedown", function() {
+                this.style.backgroundColor = "red";
+            });
+            </script>
+
+            <div id="mouseupDiv" style="width: 100px; height: 100px; background-color: lightyellow;">Release Mouse</div>
+            <script>
+            document.getElementById("mouseupDiv").addEventListener("mousedown", function() {
+                this.style.backgroundColor = "orange";
+            });
+            document.getElementById("mouseupDiv").addEventListener("mouseup", function() {
+                this.style.backgroundColor = "lightyellow";
+            });
+            </script>
+
+            <div id="mousemoveDiv" style="width: 100px; height: 100px; background-color: lightcyan;">Move Mouse Here</div>
+            <script>
+            document.getElementById("mousemoveDiv").addEventListener("mousemove", function(event) {
+                this.innerText = `X: ${event.offsetX}, Y: ${event.offsetY}`;
+            });
+            </script>
+
+
+
+    </center>
+
+    <script>
+
+        // Its kind of repeatatinve work we are not supposed to do this
+        // function F1() {
+        //     var refToTxtBox = document.getElementById("txtBox");
+        //     refToTxtBox.value = "1";
+        // }
+        // function F2() {
+        //     var refToTxtBox = document.getElementById("txtBox");
+        //     refToTxtBox.value = "2";
+        // }
+        // function F3() {
+        //     var refToTxtBox = document.getElementById("txtBox");
+        //     refToTxtBox.value = "3";
+        // }
+        // function F4() {
+        //     var refToTxtBox = document.getElementById("txtBox");
+        //     refToTxtBox.value = "4";
+        // }
+        // function F5() {
+        //     var refToTxtBox = document.getElementById("txtBox");
+        //     refToTxtBox.value = "5";
+        // }
+        // function F6() {
+        //     var refToTxtBox = document.getElementById("txtBox");
+        //     refToTxtBox.value = "6";
+        // }
+        // function F7() {
+        //     var refToTxtBox = document.getElementById("txtBox");
+        //     refToTxtBox.value = "7";
+        // }
+        // function F8() {
+        //     var refToTxtBox = document.getElementById("txtBox");
+        //     refToTxtBox.value = "8";
+        // }function F9() {
+        //     var refToTxtBox = document.getElementById("txtBox");
+        //     refToTxtBox.value = "9";
+        // }
+
+        // to avoid this we have function inbuilt
+
+        function HandleKeyPress(e) {
+
+        }
+        function StopContextMenu(e){
+            e.preventDefault();
+            alert("Right Click is not Allowed1!");
+        }
+        function F1(args){
+            var refToTxtBox = document.getElementById("txtBox");
+            refToTxtBox.value = args.target.value;
+        }
+        document.getElementById("clickDiv").addEventListener("dblclick", function(){
+            alert("Element was clicked!");
+        });
+
+
+    </script>
+</body>
+</html>

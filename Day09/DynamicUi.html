@@ -1,0 +1,55 @@
+
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    
+    <center>
+       
+        <hr>
+        <table style= " text-align: center; height: 100px; width: 100%;" id="table">
+            <tr>
+                <td>No</td>
+                <td><input type="text" id="no"> </td>
+            </tr>        
+            <tr>
+                <td>Name</td>
+                <td ><input type="text" id="name"></td>
+            </tr>
+           
+            <tr>
+                <td colspan="2"> <button style="border-radius: 10px;" onclick="AddPerson()">AddPerson</button></td>
+            </tr>
+        </table>
+        <table border="1" style="text-align: center; height: 10px; width: 100%;">
+            <thead>
+                <th>No</th>
+                <th>Name</th>
+            </thead>
+            <tbody id="tableBody">
+
+            </tbody>
+        </table>
+    </center>
+    <script>
+        function AddPerson(){
+            var reftoNo = document.getElementById("no");
+            var refToName = document.getElementById("name");
+            var refTotable = document.getElementById("tableBody");
+            var No = reftoNo.value;
+            var Name = refToName.value;
+            var row = `<tr>
+                <td>
+                ${No}
+                </td>
+                <td>
+                ${Name}
+                </td>
+            </tr>`;
+
+            refTotable.innerHTML = refTotable.innerHTML + row;
+        }
+    </script>
+</body>
+</html>
